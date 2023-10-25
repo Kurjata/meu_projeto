@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Models\Video;
 
 class ArticleController extends Controller
 {
@@ -34,13 +35,25 @@ public function store(Request $request)
 
 public function edit(Article $article)
 {
-    return view('articles.edit', compact('article'));
+    $videos = Video::where('playlist_id', $article->id)->get();
+    return view('articles.edit', compact('article', 'videos'));
 }
 
 public function update(Request $request, Article $article)
 {
     $article->update($request->all());
     return redirect()->route('articles.index');
+
+    if ($request->video_title && $request->video_url && $request->video_author) {
+        Video::create([
+            'playlist_id' => $article->id,
+            'title' => $request->video_title,
+            'url' => $request->video_url,
+            'author' => $request->video_author
+        ]);
+    }
+
+    return redirect()->route('articles.index')->with('success', 'Article and associated video updated successfully.');
 }
 
 public function destroy(Article $article)
