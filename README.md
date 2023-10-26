@@ -20,7 +20,6 @@ Um projeto simples e elegante desenvolvido com Laravel & Bootstrap para cataloga
 ![Home Page](./path/to/screenshot1.jpg)
 ![Article Details](./path/to/screenshot2.jpg)
 
-> Substitua os links dos screenshots pelo caminho real das imagens em seu projeto.
 
 ## 💼 Instalação e Uso
 
