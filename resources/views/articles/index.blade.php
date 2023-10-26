@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="container mt-4">
-    <h1 class="text-primary mb-4">SectoTech Project</h1>
+    <h1 class="text-primary mb-4">Projeto Livraria Online</h1>
     
     <a href="{{ route('articles.create') }}" class="btn btn-outline-success mb-4">Adicionar novo livro</a>
 
