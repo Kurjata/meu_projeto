@@ -14,10 +14,9 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+Route::get('/', [ArticleController::class, 'index']);
 Route::resource('articles', ArticleController::class);
 Route::resource('playlists', PlaylistController::class);
 Route::resource('playlists.videos', VideoController::class)->shallow();

@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container mt-4">
-    <h1 class="mb-4">SectoTech Project</h1>
+    <h1 class="text-primary mb-4">SectoTech Project</h1>
     
-    <a href="{{ route('articles.create') }}" class="btn btn-primary mb-4">Adicionar novo livro</a>
+    <a href="{{ route('articles.create') }}" class="btn btn-outline-success mb-4">Adicionar novo livro</a>
 
     <div class="list-group">
         @foreach($articles as $article)

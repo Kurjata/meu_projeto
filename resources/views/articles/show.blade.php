@@ -4,10 +4,10 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-header">
-            <h2>{{ $article->title }}</h2>
+            <h2 class="text-primary">{{ $article->title }}</h2>
         </div>
         <div class="card-body">
-            <p class="card-text">{{ $article->description }}</p>
+            <p class="card-text text-dark">{{ $article->description }}</p>
             <p class="text-muted">Autor: {{ $article->author }}</p>
 
             <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Editar</a>
