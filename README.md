@@ -14,13 +14,8 @@ Um projeto simples e elegante desenvolvido com Laravel & Bootstrap para cataloga
 - [Laravel](https://laravel.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
-
-## 🖼️ Screenshots
-
-![Home Page](./path/to/screenshot1.jpg)
-![Article Details](./path/to/screenshot2.jpg)
-
-
+  
+  
 ## 💼 Instalação e Uso
 
 **1.** Clone o repositório:
