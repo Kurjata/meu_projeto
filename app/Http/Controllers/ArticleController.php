@@ -61,4 +61,10 @@ public function destroy(Article $article)
     $article->delete();
     return redirect()->route('articles.index');
 }
+
+public function fetch()
+{
+    $articles = Article::all();
+    return response()->json($articles);
+}
 }
