@@ -8,7 +8,7 @@
     <a href="{{ route('articles.create') }}" class="btn btn-outline-success mb-4">Adicionar novo livro</a>
 
     <div class="list-group" id="articles-list">
-        <!-- Os artigos serão inseridos aqui através do jQuery/AJAX -->
+
     </div>
 </div>
 
