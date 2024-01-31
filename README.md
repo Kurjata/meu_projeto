@@ -44,7 +44,7 @@ Copie o arquivo .env.example e renomeie para .env, depois configure suas prefer√
 php artisan migrate
 ```
 
-7. Rode o servidor:
+6. Rode o servidor:
 
 ```bash
 php artisan serve

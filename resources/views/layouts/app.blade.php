@@ -9,7 +9,7 @@
 </head>
 <body class="bg-dark text-white">
 
-<div class="container">
+<div class="container"> 
     @yield('content')
 </div>
 
