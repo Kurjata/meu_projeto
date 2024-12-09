@@ -29,8 +29,15 @@ public function show(Article $article)
 
 public function store(Request $request)
 {
-    Article::create($request->all());
-    return redirect()->route('articles.index');
+    Article::create([
+        'title'       => $request->title,
+        'description' => $request->description,
+        'author'      => $request->author,
+        'status'      => 'em andamento',
+    ]);
+
+    return redirect()->route('articles.index')
+        ->with('success', 'Chamado criado com sucesso!');
 }
 
 public function edit(Article $article)
@@ -67,4 +74,13 @@ public function fetch()
     $articles = Article::all();
     return response()->json($articles);
 }
+
+public function close(Article $article)
+{
+    $article->update(['status' => 'Encerrado']);
+
+    return redirect()->route('articles.index')
+        ->with('success', 'Chamado encerrado com sucesso!');
+}
+
 }

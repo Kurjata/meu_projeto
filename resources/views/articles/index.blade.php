@@ -24,7 +24,8 @@
                         <a href="/articles/${article.id}" class="list-group-item list-group-item-action mb-2">
                             <h4>${article.title}</h4>
                             <p class="mb-0">${article.description.length > 150 ? article.description.substring(0, 150) + '...' : article.description}</p>
-                            <small class="text-muted">Autor: ${article.author}</small>
+                            <small class="text-muted">Autor: ${article.author}</small><br>
+                            <span class="badge badge-info">Status: ${article.status}</span>
                         </a>
                     `);
                 });

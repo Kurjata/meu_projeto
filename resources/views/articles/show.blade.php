@@ -9,15 +9,15 @@
         <div class="card-body">
             <p class="card-text text-dark">{{ $article->description }}</p>
             <p class="text-muted">Autor: {{ $article->author }}</p>
+            <p><span class="badge badge-info">Status: {{ $article->status }}</span></p>
 
             <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Editar</a>
-            <form action="{{ route('articles.destroy', $article->id) }}" method="POST" class="d-inline">
+            <form action="{{ route('articles.close', $article->id) }}" method="POST" class="d-inline">
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Deletar</button>
+                @method('PUT')
+                <button type="submit" class="btn btn-danger">Encerrar</button>
             </form>
         </div>
-
     </div>
 
     <a href="{{ route('articles.index') }}" class="btn btn-secondary mt-4">Voltar</a>
