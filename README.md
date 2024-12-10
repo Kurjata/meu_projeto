@@ -1,14 +1,3 @@
-# SectoTech Project 📘
-
-Um projeto simples e elegante desenvolvido com Laravel & Bootstrap para catalogar artigos. Com uma interface intuitiva, ele permite aos usuários visualizar, adicionar, editar e excluir artigos de forma eficaz.
-
-## 🚀 Características
-
-- **CRUD Completo**: Gerencie facilmente seus artigos.
-- **Design Moderno**: Feito com Bootstrap para garantir uma interface agradável.
-- **Responsive**: Adapta-se bem em dispositivos móveis e desktop.
-- **Integração AJAX**: Carregamento dinâmico de artigos para uma experiência mais fluida.
-
 ## 🛠️ Tecnologias Utilizadas
 
 - [Laravel](https://laravel.com/)
@@ -44,7 +33,13 @@ Copie o arquivo .env.example e renomeie para .env, depois configure suas prefer�
 php artisan migrate
 ```
 
-6. Rode o servidor:
+6. Permitir acesso ao storage:
+
+```bash
+php artisan storage:link
+```
+
+7. Rode o servidor:
 
 ```bash
 php artisan serve

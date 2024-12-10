@@ -18,7 +18,6 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        // Validação fictícia - aceita qualquer login
         if ($request->email && $request->password) {
             return redirect()->route('dashboard');
         }

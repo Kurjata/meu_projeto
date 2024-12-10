@@ -29,31 +29,26 @@ public function show(Article $article)
 
 public function store(Request $request)
 {
-    // Validação dos campos
     $request->validate([
         'title' => 'required|string|max:100',
         'description' => 'required|string|max:200',
         'author' => 'required|string|max:150',
-        'attachment' => 'nullable|file|mimes:pdf,doc,docx|max:2048', // Validação do arquivo
+        'attachment' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
     ]);
 
-    // Verifica e processa o upload do arquivo
     $filePath = null;
     
     if ($request->hasFile('attachment')) {
-        $filePath = $request->file('attachment')->store('attachments', 'public'); // Salvar no diretório "storage/app/public/attachments"
-        // dd($filePath);
+        $filePath = $request->file('attachment')->store('attachments', 'public');
     }
-    // Cria o registro no banco de dados
     Article::create([
         'title' => $request->title,
         'description' => $request->description,
         'author' => $request->author,
-        'status' => 'em andamento', // Status padrão
-        'attachment' => $filePath, // Caminho do arquivo salvo
+        'status' => 'em andamento', 
+        'attachment' => $filePath,
     ]);
 
-    // Redireciona com mensagem de sucesso
     return redirect()->route('articles.index')->with('success', 'Chamado criado com sucesso!');
 }
 
@@ -67,7 +62,6 @@ public function visualizar($id)
         return redirect()->back()->with('error', 'Arquivo não encontrado.');
     }
     return response()->json($article);
-    // return response()->file($caminhoCompleto);
 }
 
 public function edit(Article $article)
